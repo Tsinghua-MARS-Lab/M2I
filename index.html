@@ -1,0 +1,248 @@
+<!DOCTYPE HTML>
+<!--
+	Story by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+	Note: Only needed for demo purposes. Delete for production sites.
+-->
+<html>
+	<head>
+		<title>Story by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="divided">
+
+				<!-- One -->
+					<section class="banner style1 orient-left content-align-center image-position-center fullscreen onload-image-fade-in onload-content-fade-right">
+						<div class="content">
+							<h2>M2I: From Factored Marginal Trajectory Prediction to Interactive Prediction</h2>
+							<p><a href="https://scholar.google.com/citations?user=D1KNQasAAAAJ&hl=en&authuser=1">Qiao Sun</a><sup>1</sup>*,
+								<a href="https://scholar.google.com/citations?hl=en&authuser=1&user=tHYy9bkAAAAJ">Xin Huang</a><sup>2</sup>*,
+								<a href="https://scholar.google.com/citations?user=FPvo18QAAAAJ&hl=en&authuser=1">Junru Gu</a><sup>1</sup>,
+								<a href="https://www.csail.mit.edu/person/brian-williams">Brian Williams</a><sup>2</sup>,
+								<a href="https://hangzhaomit.github.io/">Hang Zhao</a><sup>1</sup>
+							<p><sup>1</sup> IIIS, Tsinghua University, <sup>2</sup> CSAIL, Massachusetts Institute of Technology</p>
+							<!-- <p>* Denotes equal contribution</p> -->
+							<h3>CVPR 2022</h3>
+							<p>M2I is a simple but effective joint motion prediction framework that makes marginal and conditional predictions by exploiting the <strong>factorized relations</strong> between interacting agents.</p>
+							<!-- <p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p> -->
+							<div class="inner">
+								<ul class="icons">
+									<li><a href="https://github.com/Tsinghua-MARS-Lab/M2I" class="icon brands style2 fa-github"><span class="label">Github</span></a></li>
+									<li><a href="https://arxiv.org/abs/2202.11884" class="icon style2 fa-file-pdf"><span class="label">Arxiv</span></a></li>
+								</ul>
+							</div>
+
+							<ul class="actions stacked">
+								<li><a href="#first" class="button big wide smooth-scroll-middle">Learn More</a></li>
+							</ul>
+						</div>
+						<div class="image">
+							<img src="images/teaser.png" alt="" />
+						</div>
+					</section>
+
+				<!-- Abstract -->
+				<section class="wrapper style1 align-center" id="first">
+					<div class="inner">
+						<h2>Abstract</h2>
+						<p>Predicting future motions of road participants is an important task for driving autonomously in urban scenes. Existing models excel at predicting marginal trajectories for single agents, yet it remains an open question to jointly predict scene compliant trajectories over multiple agents. The challenge is due to exponentially increasing prediction space as a function of the number of agents. In this work, we exploit the underlying relations between interacting agents and decouple the joint prediction problem into marginal prediction problems. Our proposed approach M2I first classifies interacting agents as pairs of influencers and reactors, and then leverages a marginal prediction model and a conditional prediction model to predict trajectories for the influencers and reactors, respectively. The predictions from interacting agents are combined and selected according to their joint likelihoods. Experiments show that our simple but effective approach achieves state-of-the-art performance on the Waymo Open Motion Dataset interactive prediction benchmark.
+						</p>
+					</div>
+				</section>
+
+				<!-- Method -->
+				<section class="wrapper style1 align-center">
+					<div class="inner">
+						<h2>Marginal to Conditional</h2>
+						<p>M2I includes three models that share the same context encoder. The relation predictor includes a relation prediction head to predict distribution over relation types. The marginal predictor adopts a trajectory prediction head to produce multi-modal prediction samples. The conditional trajectory predictor takes an augmented scene context input, including influencer future trajectory.
+						</p>
+						<span class="image main"><img src="images/iTNT - Page 8.png" alt="" /></span>
+					</div>
+				</section>
+
+
+
+				<!-- Relation prediction demos -->
+				<section class="wrapper style1 align-center">
+					<div class="inner">
+						<h2>Relationship Prediction Demos</h2>
+						<p>Here are some of our relationship prediction results against some very challenging scenarios from the <a href="https://waymo.com/open/">Waymo Open Motion Dataset</a>. Our relation predictor can successfuly predict relations related with the target vehicles which are marked as the blue ones. Detected relationships were marked as red arrows from the influencers to the reactors.</p>
+						<img width=45% height=auto src="images/legends.png" alt="" />
+					</div>
+					<div class="items style1 medium onscroll-fade-in">
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/merging_normal_3.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Merging into high speed traffic</h3>
+							<p>The relaiton predictor chooses the best influencer to follow while merging</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/normal_merging_16.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Merging with crowded traffic</h3>
+							<p>The relation predictor correctly sorts the crowd before the green light at an intersection</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/crazy_merging.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Multiple lane changings</h3>
+							<p>The relationship predictor selects reasonable influencers for both blue agents against complex scenarios</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/yielding_1.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Yielding to a jaywalker</h3>
+							<p>The relationship predictor learns to yield to pedestrians under different situations</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/yielding_2.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Yielding to other vehicles</h3>
+							<p>The relationship predictor learns the right of the way</p>
+						</section>				
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/yielding_3.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Yielding with detection failure</h3>
+							<p>The relationship predictor can make correct predictions with detection failures on the traffic lights</p>
+						</section>												
+					</div>
+				</section>
+
+				<!-- Relation prediction demos -->
+				<section class="wrapper style1 align-center">
+					<div class="inner">
+						<h2>Conditional Trajectory Prediction Demos</h2>
+						<p>Here are some of our conditional trajectory prediction results for the reactors from the <a href="https://waymo.com/open/">Waymo Open Motion Dataset</a>. Our conditional trajectory predictor outperforms the marginal trajectory predictor on solving conflicts under complex multi-agent interactions.</p>
+						<img width=45% height=auto src="images/legends.png" alt="" />
+					</div>
+					<div class="items style1 medium onscroll-fade-in">
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_yield_p.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Yielding to pedestrians</h3>
+							<p>The condictional predictor predicts a yielding trajectory after several pedestrians in a busy intersection.</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_yielding_p.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Yielding to a cyclist</h3>
+							<p>The condictional predictor predicts a yielding trajectory after a cyclist in a busy intersection.</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_yielding_p2.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Yielding to a jaywalker</h3>
+							<p>The conditional predictor predicts a yielding trajectory after a jaywalker. A clear <strong>slow down</strong> and <strong>speed up</strong> can be spotted before and after the conflict.</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_merge_2.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Turning into the main road</h3>
+							<p>The conditional trajectory predictor predicts the turning vehicle to wait until it is clear of traffic.</p>
+						</section>	
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_turning_1.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Right turns yield to continous left turns</h3>
+							<p>The conditional trajectory predictor predicts a turning trajectory until previous traffic is clear.</p>
+						</section>			
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_turnings_1.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Multiple turnings</h3>
+							<p>The conditional predictor follows the predicted relations and generates consistant trajectories.</p>
+						</section>
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_merging.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Cutting in before an intersection</h3>
+							<p>The conditional predictor generates shorter and slower trajectory for the reactor than the influencer.</p>
+						</section>		
+						<section>
+							<span class="video">
+								<video controls autoplay muted loop class="html-video" width=100% height=auto>
+									<source src="videos/traj_following_turning.mp4" type="video/mp4">
+									</video>
+								</span>
+							<h3>Following another vehicle</h3>
+							<p>The conditional predictor generates trajectories for the vehicle to turn right following the leading vehicle.</p>
+						</section>																							
+					</div>
+				</section>
+
+				<section class="wrapper style1 align-center">
+					<div class="inner">
+						<h2>Citing</h2>
+						<p>If you find our work intriguing, inspiring or useful to your research, please consider citing:</p>
+						<blockquote style="text-align:left; background-color:#EEEEEE">
+							@inproceedings{sun2022m2i,<br>
+  								title={{M2I}: From Factored Marginal Trajectory Prediction to Interactive Prediction},<br>
+  								author={Sun, Qiao and Huang, Xin and Gu, Junru and Williams, Brian and Zhao, Hang},<br>
+  								booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},<br>
+  								year={2022}<br>
+							}
+							</blockquote>						
+					</div>					
+				</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

@@ -28,10 +28,11 @@
 								<a href="https://scholar.google.com/citations?user=FPvo18QAAAAJ&hl=en&authuser=1">Junru Gu</a><sup>1</sup>,
 								<a href="https://www.csail.mit.edu/person/brian-williams">Brian Williams</a><sup>2</sup>,
 								<a href="https://hangzhaomit.github.io/">Hang Zhao</a><sup>1</sup>
-							<p><sup>1</sup> IIIS, Tsinghua University, <sup>2</sup> CSAIL, Massachusetts Institute of Technology</p>
+							<h6><small>* denotes equal contribution</small></h6>
+							<h5><sup>1</sup> IIIS, Tsinghua University, <sup>2</sup> CSAIL, Massachusetts Institute of Technology</h5>
 							<!-- <p>* Denotes equal contribution</p> -->
 							<h3>CVPR 2022</h3>
-							<p>M2I is a simple but effective joint motion prediction framework that makes marginal and conditional predictions by exploiting the <strong>factorized relations</strong> between interacting agents.</p>
+							<h4>M2I is a simple but effective joint motion prediction framework through marginal and conditional predictions by exploiting the <strong>factorized relations</strong> between interacting agents.</h4>
 							<!-- <p class="major">A (modular, highly tweakable) responsive one-page template designed by <a href="https://html5up.net">HTML5 UP</a> and released for free under the <a href="https://html5up.net/license">Creative Commons</a>.</p> -->
 							<div class="inner">
 								<ul class="icons">
@@ -62,7 +63,7 @@
 				<section class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Marginal to Conditional</h2>
-						<p>M2I includes three models that share the same context encoder. The relation predictor includes a relation prediction head to predict distribution over relation types. The marginal predictor adopts a trajectory prediction head to produce multi-modal prediction samples. The conditional trajectory predictor takes an augmented scene context input, including influencer future trajectory.
+						<p>M2I includes three models that share the same context encoder. The relation predictor includes a relation prediction head to predict distribution over relation types. The marginal predictor adopts a trajectory prediction head to produce multi-modal prediction samples. The conditional trajectory predictor takes an augmented scene context input, including the future trajectory of influencers, to produce conditional predictions.
 						</p>
 						<span class="image main"><img src="images/iTNT - Page 8.png" alt="" /></span>
 					</div>
@@ -74,7 +75,7 @@
 				<section class="wrapper style1 align-center">
 					<div class="inner">
 						<h2>Relationship Prediction Demos</h2>
-						<p>Here are some of our relationship prediction results against some very challenging scenarios from the <a href="https://waymo.com/open/">Waymo Open Motion Dataset</a>. Our relation predictor can successfuly predict relations related with the target vehicles which are marked as the blue ones. Detected relationships were marked as red arrows from the influencers to the reactors.</p>
+						<p>Here are some of our relationship prediction results against some very challenging scenarios from the <a href="https://waymo.com/open/">Waymo Open Motion Dataset</a>. Our relation predictor can successfuly predict relations involving interactive vehicles marked in blue. Detected relationships were marked as red arrows from the influencers to the reactors.</p>
 						<img width=45% height=auto src="images/legends.png" alt="" />
 					</div>
 					<div class="items style1 medium onscroll-fade-in">
@@ -85,7 +86,7 @@
 									</video>
 								</span>
 							<h3>Merging into high speed traffic</h3>
-							<p>The relaiton predictor chooses the best influencer to follow while merging</p>
+							<p>The relationship predictor chooses the best influencer to follow while merging.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -93,8 +94,8 @@
 									<source src="videos/normal_merging_16.mp4" type="video/mp4">
 									</video>
 								</span>
-							<h3>Merging with crowded traffic</h3>
-							<p>The relation predictor correctly sorts the crowd before the green light at an intersection</p>
+							<h3>Merging into crowded traffic</h3>
+							<p>The relationship predictor correctly sorts the crowd before the green light at an intersection.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -103,7 +104,7 @@
 									</video>
 								</span>
 							<h3>Multiple lane changings</h3>
-							<p>The relationship predictor selects reasonable influencers for both blue agents against complex scenarios</p>
+							<p>The relationship predictor selects reasonable influencers for both blue agents against complex scenarios.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -112,7 +113,7 @@
 									</video>
 								</span>
 							<h3>Yielding to a jaywalker</h3>
-							<p>The relationship predictor learns to yield to pedestrians under different situations</p>
+							<p>The relationship predictor learns to yield to pedestrians when nessesary.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -121,7 +122,7 @@
 									</video>
 								</span>
 							<h3>Yielding to other vehicles</h3>
-							<p>The relationship predictor learns the right of the way</p>
+							<p>The relationship predictor learns the right of the way.</p>
 						</section>				
 						<section>
 							<span class="video">
@@ -130,7 +131,7 @@
 									</video>
 								</span>
 							<h3>Yielding with detection failure</h3>
-							<p>The relationship predictor can make correct predictions with detection failures on the traffic lights</p>
+							<p>The relationship predictor can make correct predictions with detection failures on the traffic lights.</p>
 						</section>												
 					</div>
 				</section>
@@ -150,7 +151,7 @@
 									</video>
 								</span>
 							<h3>Yielding to pedestrians</h3>
-							<p>The condictional predictor predicts a yielding trajectory after several pedestrians in a busy intersection.</p>
+							<p>The conditional predictor predicts a yielding trajectory after several pedestrians in a busy intersection.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -159,7 +160,7 @@
 									</video>
 								</span>
 							<h3>Yielding to a cyclist</h3>
-							<p>The condictional predictor predicts a yielding trajectory after a cyclist in a busy intersection.</p>
+							<p>The conditional predictor predicts a yielding trajectory after a cyclist in a busy intersection.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -168,7 +169,7 @@
 									</video>
 								</span>
 							<h3>Yielding to a jaywalker</h3>
-							<p>The conditional predictor predicts a yielding trajectory after a jaywalker. A clear <strong>slow down</strong> and <strong>speed up</strong> can be spotted before and after the conflict.</p>
+							<p>The conditional predictor predicts a yielding trajectory after a jaywalker. A clear <strong>slow down</strong> and <strong>speed up</strong> can be spotted before and after the interaction.</p>
 						</section>
 						<section>
 							<span class="video">
@@ -213,7 +214,7 @@
 									</video>
 								</span>
 							<h3>Following another vehicle</h3>
-							<p>The conditional predictor generates trajectories for the vehicle to turn right following the leading vehicle.</p>
+							<p>The conditional predictor generates trajectories for the vehicle to follow the leading vehicle when turning right.</p>
 						</section>																							
 					</div>
 				</section>

@@ -51,7 +51,7 @@
 					</section>
 
 				<!-- Abstract -->
-				<section class="wrapper style1 align-center" id="first">
+				<section class="wrapper style1 align-left" id="first">
 					<div class="inner">
 						<h2>Abstract</h2>
 						<p>Predicting future motions of road participants is an important task for driving autonomously in urban scenes. Existing models excel at predicting marginal trajectories for single agents, yet it remains an open question to jointly predict scene compliant trajectories over multiple agents. The challenge is due to exponentially increasing prediction space as a function of the number of agents. In this work, we exploit the underlying relations between interacting agents and decouple the joint prediction problem into marginal prediction problems. Our proposed approach M2I first classifies interacting agents as pairs of influencers and reactors, and then leverages a marginal prediction model and a conditional prediction model to predict trajectories for the influencers and reactors, respectively. The predictions from interacting agents are combined and selected according to their joint likelihoods. Experiments show that our simple but effective approach achieves state-of-the-art performance on the Waymo Open Motion Dataset interactive prediction benchmark.
@@ -60,7 +60,7 @@
 				</section>
 
 				<!-- Method -->
-				<section class="wrapper style1 align-center">
+				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<h2>Marginal to Conditional</h2>
 						<p>M2I includes three models that share the same context encoder. The relation predictor includes a relation prediction head to predict distribution over relation types. The marginal predictor adopts a trajectory prediction head to produce multi-modal prediction samples. The conditional trajectory predictor takes an augmented scene context input, including the future trajectory of influencers, to produce conditional predictions.
@@ -72,11 +72,12 @@
 
 
 				<!-- Relation prediction demos -->
-				<section class="wrapper style1 align-center">
+				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<h2>Relationship Prediction Demos</h2>
 						<p>Here are some of our relationship prediction results against some very challenging scenarios from the <a href="https://waymo.com/open/">Waymo Open Motion Dataset</a>. Our relation predictor can successfuly predict relations involving interactive vehicles marked in blue. Detected relationships were marked as red arrows from the influencers to the reactors.</p>
-						<img width=45% height=auto src="images/legends.png" alt="" />
+						<!-- <img class="image main" width=45% height=auto src="images/legends1.png" alt="" /> -->
+						<img width=100% height=auto src="images/legends1.png" alt="" />
 					</div>
 					<div class="items style1 medium onscroll-fade-in">
 						<section>
@@ -137,11 +138,11 @@
 				</section>
 
 				<!-- Relation prediction demos -->
-				<section class="wrapper style1 align-center">
+				<section class="wrapper style1 align-left">
 					<div class="inner">
 						<h2>Conditional Trajectory Prediction Demos</h2>
 						<p>Here are some of our conditional trajectory prediction results for the reactors from the <a href="https://waymo.com/open/">Waymo Open Motion Dataset</a>. Our conditional trajectory predictor outperforms the marginal trajectory predictor on solving conflicts under complex multi-agent interactions.</p>
-						<img width=45% height=auto src="images/legends.png" alt="" />
+						<img width=100% height=auto src="images/legends1.png" alt="" />
 					</div>
 					<div class="items style1 medium onscroll-fade-in">
 						<section>

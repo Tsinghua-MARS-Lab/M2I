@@ -1,0 +1,24 @@
+hidden_size: 128
+train_batch_size: 64
+sub_graph_batch_size: 4096
+core_num: 16
+infMLP: 8
+nms_threshold: 7.2
+validation_model: 30
+distributed_training: 1
+agent_type: vehicle
+other_params:
+  - train_relation
+  - gt_influencer_traj
+  - save_rst
+  - raster_inf
+  - raster
+  - pair_vv
+  - l1_loss
+  - densetnt
+  - goals_2D
+  - enhance_global_graph
+  - laneGCN
+  - point_sub_graph
+  - laneGCN-4
+  - stride_10_2

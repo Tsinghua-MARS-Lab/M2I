@@ -1,0 +1,17 @@
+hidden_size: 128
+train_batch_size: 64
+sub_graph_batch_size: 4096
+core_num: 16
+other_params:
+  - train_relation
+  - pair_vv
+  - pred_with_threshold
+  - l1_loss
+  - densetnt
+  - goals_2D
+  - enhance_global_graph
+  - laneGCN
+  - point_sub_graph
+  - laneGCN-4
+  - stride_10_2
+  - raster

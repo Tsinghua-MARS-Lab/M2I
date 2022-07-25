@@ -55,12 +55,13 @@ conda activate M2I
 Download our prediction results and our pre-trained models from [Google Drive](https://drive.google.com/drive/u/2/folders/1SH8HWu8DQtwUgSFoIJOL8vJEvgFptBCD), then you can run the following commands for a quick prediction.
 
 ### Relation Prediction
-Download our relation prediction results `tP9.r.densetnt.relation.v2v.VAL` on the interactive validation dataset, 
-or download the ground truth label `validation_interactive_gt_relations.pickle` and the pre-trained relation model `r.densetnt.relation.v2v.zip` to run the following command to predict. 
+Download our relation prediction results `m2i.relation.v2v.VAL` on the interactive validation dataset, 
+or download the ground truth label `validation_interactive_gt_relations.pickle` and 
+the pre-trained relation model `m2i.relation.v2v.zip` (unpack first) to run the following command to predict. 
 Download and unpack to the project folder to load.
 
 ```  bash
-OUTPUT_DIR=r.densetnt.relation.v2v; \
+OUTPUT_DIR=m2i.relation.v2v; \
 DATA_DIR=./validation_interactive/; \
 RELATION_GT_DIR=./validation_interactive_gt_relations.pickle; \
 python -m src.run --waymo --data_dir ${DATA_DIR} \
@@ -72,7 +73,8 @@ python -m src.run --waymo --data_dir ${DATA_DIR} \
 ```
 
 ### Marginal Trajectory Prediction
-Download the marginal prediction results `validation_interactive_v_rdensetnt_full.pickle` on the interactive validation dataset, or run the following command to predict with the pre-trained marginal prediction model `densetnt.raster.vehicle.1.zip`:
+Download the marginal prediction results `validation_interactive_m2i_v.pickle` on the interactive validation dataset, 
+or run the following command to predict with the pre-trained marginal prediction model `densetnt.raster.vehicle.1.zip` (unpack first):
 
 ```  bash
 OUTPUT_DIR=densetnt.raster.vehicle.1; \
@@ -85,14 +87,15 @@ python -m src.run --do_train --waymo --data_dir ${DATA_DIR} \
 ```
 
 ### Conditional Trajectory Prediction
-Download our pre-trained conditional prediction model `rdensetnt.reactor.Tgt-Rgt.raster_inf.v2v.zip` and unpack it to predict trajectories of the reactors by running:
+Download our pre-trained conditional prediction model `m2i.conditional.v2v.zip` and unpack it to predict trajectories of 
+the reactors by running:
 
 ```  bash
-OUTPUT_DIR=densetnt.reactor.Tgt-Rgt.raster_inf.v2v; \
+OUTPUT_DIR=m2i.conditional.v2v; \
 DATA_DIR=./validation_interactive/; \
 RELATION_GT_DIR=./validation_interactive_gt_relations.pickle; \
-RELATION_PRED_DIR=./tP9.r.densetnt.relation.v2v.VAL; \
-INFLUENCER_PRED_DIR=./validation_interactive_v_rdensetnt_full.pickle; \
+RELATION_PRED_DIR=./m2i.relation.v2v.VAL; \
+INFLUENCER_PRED_DIR=./validation_interactive_m2i_v.pickle; \
 python -m src.run --waymo --data_dir ${DATA_DIR} \
 --output_dir ${OUTPUT_DIR} --config conditional_pred.yaml \
 --relation_file_path ${RELATION_GT_DIR} \
@@ -103,9 +106,11 @@ python -m src.run --waymo --data_dir ${DATA_DIR} \
 --eval_exp_path ${RESULT_EXPORT_PATH}
 ```
 
-The file `validation_interactive_gt_relations.pickle`, `tP9.r.densetnt.relation.v2v.VAL`, `validation_interactive_v_rdensetnt_full.pickle` can be found in the Google drive.
+The file `validation_interactive_gt_relations.pickle`, `m2i.relation.v2v.VAL`, `validation_interactive_m2i_v.pickle` 
+can be found in the Google drive.
 
-This command will output 6 predictions conditioned on one influencer prediction based on `--eval_rst_saving_number`. Change this variable from 0 to 5 to get 6 groups of conditional predictions.
+This command will output 6 predictions conditioned on one influencer prediction based on 
+`--eval_rst_saving_number`. Change this variable from 0 to 5 to get 6 groups of conditional predictions.
 
 
 ## Performance
@@ -173,7 +178,8 @@ python scripts/filter_interactive_data.py -i TRAINING_DATA_DIR -o TRAINING_INTER
 ```
 
 ### Training Relation Predictor
-Download the ground truth relation data `training_interactive_gt_relations.pickle` from Google drive and run the following command to train a relation predictor:
+Download the ground truth relation data `training_interactive_gt_relations.pickle` from 
+Google drive and run the following command to train a relation predictor:
 ```bash
 DATA_DIR=./training_interactive/; \
 RELATION_GT_DIR=./training_interactive_gt_relations.pickle; \

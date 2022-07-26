@@ -4,11 +4,11 @@ sub_graph_batch_size: 4096
 core_num: 16
 infMLP: 8
 nms_threshold: 7.2
-validation_model: 30
+validation_model: 29
 distributed_training: 1
 agent_type: vehicle
 other_params:
-  - train_relation
+  - train_reactor
   - gt_influencer_traj
   - save_rst
   - raster_inf

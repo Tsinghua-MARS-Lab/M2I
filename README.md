@@ -224,6 +224,11 @@ l1_loss densetnt goals_2D enhance_global_graph laneGCN point_sub_graph laneGCN-4
 ```
 To filter the type of agents for reactors, change the value of `--agent_type`. To filter both the type of reactors and influencers, change the flag of `pair_vv`.
 
+# Access with License Agreement
+
+Following the policy from Waymo, we might ask you to sign their 'Waymo Dataset License Agreement for Non-Commercial Use' by agreeing to this [page](https://waymo.com/open/licensing/) before downloading our pre-trained model.
+
+
 # Citation
 
 If you found this repo useful to your research, please consider citing
